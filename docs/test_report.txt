@@ -1,0 +1,39 @@
+test_ambiguous_escalates (test_all.Api.test_ambiguous_escalates) ... ok
+test_authentication (test_all.Api.test_authentication) ... authentication failure on /api/login: invalid credentials
+ok
+test_closed_ticket_cannot_be_resolved (test_all.Api.test_closed_ticket_cannot_be_resolved) ... ok
+test_create_grounded_then_resolve (test_all.Api.test_create_grounded_then_resolve) ... ok
+test_learner_can_only_file_as_self (test_all.Api.test_learner_can_only_file_as_self) ... ok
+test_list_and_filter (test_all.Api.test_list_and_filter) ... ok
+test_negative (test_all.Api.test_negative) ... ok
+test_role_based_access (test_all.Api.test_role_based_access) ... /home/claude/campus_support/app.py:102: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxswsf6kp/ground_truth.csv' mode='r' encoding='utf-8'>
+  for r in csv.DictReader(open(GT)):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_detectors_match_ground_truth (test_all.Audit.test_detectors_match_ground_truth) ... ok
+test_distributions_are_realistic (test_all.Compliance.test_distributions_are_realistic) ... ok
+test_edge_cases_present (test_all.Compliance.test_edge_cases_present) ... /home/claude/campus_support/tests/test_all.py:161: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpspgmb5f1/ground_truth.csv' mode='r' encoding='utf-8'>
+  types = {r[0] for r in csv.DictReader(open(f'{self.d}/ground_truth.csv'))} if False else {r['issue_type'] for r in csv.DictReader(open(f'{self.d}/ground_truth.csv'))}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_every_answer_has_answered_event (test_all.Compliance.test_every_answer_has_answered_event) ... ok
+test_ground_truth_never_in_application_database (test_all.Compliance.test_ground_truth_never_in_application_database) ... ok
+test_id_conventions (test_all.Compliance.test_id_conventions) ... ok
+test_lifecycle_states_and_events (test_all.Compliance.test_lifecycle_states_and_events) ... ok
+test_validator_detects_corruption (test_all.Compliance.test_validator_detects_corruption) ... ok
+test_business_hours (test_all.Gen.test_business_hours) ... ok
+test_counts (test_all.Gen.test_counts) ... ok
+test_reproducible (test_all.Gen.test_reproducible) ... ok
+test_validation_passes (test_all.Gen.test_validation_passes) ... ok
+test_migration_matches_generator_schema_and_is_idempotent (test_all.Migrations.test_migration_matches_generator_schema_and_is_idempotent) ... /home/claude/campus_support/tests/test_all.py:191: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/claude/campus_support/migrations/001_init.sql' mode='r' encoding='utf-8'>
+  self.assertEqual(open(os.path.join(ROOT, 'migrations', '001_init.sql')).read(), gen.DDL)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/claude/campus_support/migrate.py:20: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/claude/campus_support/migrations/001_init.sql' mode='r' encoding='utf-8'>
+  con.executescript(open(path).read())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.765s
+
+OK

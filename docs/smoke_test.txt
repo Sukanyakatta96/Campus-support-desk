@@ -1,0 +1,9 @@
+PASS  unauthenticated request rejected 
+PASS  bad password rejected 
+PASS  staff reads metrics 
+PASS  learner blocked from metrics 
+PASS  learner files grounded request -> TKT-2026-005001 cites KB-000177
+PASS  ambiguous request escalates -> TKT-2026-005002
+PASS  learner cannot resolve 
+PASS  staff resolves with rating 
+PASS  event history preserved ['CREATED', 'ROUTED', 'ANSWERED', 'RESOLVED']

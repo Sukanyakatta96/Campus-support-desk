@@ -1,0 +1,25 @@
+policy_id,domain,title,owner_team
+POL-FIN-2026-001,financial_aid,Financial Aid Policy 1,TEAM-FIN
+POL-FIN-2026-002,financial_aid,Financial Aid Policy 2,TEAM-FIN
+POL-FIN-2026-003,financial_aid,Financial Aid Policy 3,TEAM-FIN
+POL-FIN-2026-004,financial_aid,Financial Aid Policy 4,TEAM-FIN
+POL-FIN-2026-005,financial_aid,Financial Aid Policy 5,TEAM-FIN
+POL-FIN-2026-006,financial_aid,Financial Aid Policy 6,TEAM-FIN
+POL-REG-2026-001,registration,Registration Policy 1,TEAM-REG
+POL-REG-2026-002,registration,Registration Policy 2,TEAM-REG
+POL-REG-2026-003,registration,Registration Policy 3,TEAM-REG
+POL-REG-2026-004,registration,Registration Policy 4,TEAM-REG
+POL-REG-2026-005,registration,Registration Policy 5,TEAM-REG
+POL-REG-2026-006,registration,Registration Policy 6,TEAM-REG
+POL-IT-2026-001,it,It Policy 1,TEAM-IT
+POL-IT-2026-002,it,It Policy 2,TEAM-IT
+POL-IT-2026-003,it,It Policy 3,TEAM-IT
+POL-IT-2026-004,it,It Policy 4,TEAM-IT
+POL-IT-2026-005,it,It Policy 5,TEAM-IT
+POL-IT-2026-006,it,It Policy 6,TEAM-IT
+POL-ACC-2026-001,accessibility,Accessibility Policy 1,TEAM-ACC
+POL-ACC-2026-002,accessibility,Accessibility Policy 2,TEAM-ACC
+POL-ACC-2026-003,accessibility,Accessibility Policy 3,TEAM-ACC
+POL-ACC-2026-004,accessibility,Accessibility Policy 4,TEAM-ACC
+POL-ACC-2026-005,accessibility,Accessibility Policy 5,TEAM-ACC
+POL-ACC-2026-006,accessibility,Accessibility Policy 6,TEAM-ACC

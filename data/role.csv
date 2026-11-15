@@ -1,0 +1,6 @@
+role_id,name
+ROLE-001,learner
+ROLE-002,instructor
+ROLE-003,academic_administrator
+ROLE-004,support_staff
+ROLE-005,platform_administrator

@@ -1,0 +1,8 @@
+PASS  wrong password shows an error
+PASS  learner sees only Tickets and New request
+PASS  learner files a request and gets a cited answer
+PASS  staff dashboard loads metrics
+PASS  staff does not see the admin-only Audit tab
+PASS  staff filters, opens and resolves a ticket with rating
+PASS  administrator sees the 5-check audit
+PASS  no JavaScript errors

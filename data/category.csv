@@ -1,0 +1,9 @@
+category_id,domain,name,owner_team_id
+CAT-FIN-AID,FIN,Aid eligibility,TEAM-FIN
+CAT-FIN-BILL,FIN,Tuition billing,TEAM-FIN
+CAT-REG-ENR,REG,Aid eligibility,TEAM-REG
+CAT-REG-GRD,REG,Tuition billing,TEAM-REG
+CAT-IT-ACCT,IT,Aid eligibility,TEAM-IT
+CAT-IT-LMS,IT,Tuition billing,TEAM-IT
+CAT-ACC-ACCOM,ACC,Aid eligibility,TEAM-ACC
+CAT-ACC-ASSIST,ACC,Tuition billing,TEAM-ACC

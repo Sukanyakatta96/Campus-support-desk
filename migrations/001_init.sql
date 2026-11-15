@@ -1,0 +1,14 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE role(role_id TEXT PRIMARY KEY,name TEXT NOT NULL UNIQUE);
+CREATE TABLE term(term_id TEXT PRIMARY KEY,name TEXT NOT NULL,start_date TEXT NOT NULL,end_date TEXT NOT NULL CHECK(end_date>start_date));
+CREATE TABLE requester(requester_id TEXT PRIMARY KEY,full_name TEXT NOT NULL,email TEXT NOT NULL UNIQUE,role_id TEXT NOT NULL REFERENCES role);
+CREATE TABLE category(category_id TEXT PRIMARY KEY,domain TEXT NOT NULL CHECK(domain IN('FIN','REG','IT','ACC')),name TEXT NOT NULL,owner_team_id TEXT NOT NULL);
+CREATE TABLE policy_document(policy_id TEXT PRIMARY KEY,domain TEXT NOT NULL,title TEXT NOT NULL,owner_team TEXT NOT NULL);
+CREATE TABLE knowledge_article(article_id TEXT PRIMARY KEY,policy_id TEXT NOT NULL REFERENCES policy_document,domain TEXT NOT NULL,version INT NOT NULL,title TEXT NOT NULL,body TEXT NOT NULL,effective_from TEXT NOT NULL,effective_to TEXT,status TEXT NOT NULL CHECK(status IN('current','superseded')),UNIQUE(policy_id,version),CHECK(effective_to IS NULL OR effective_to>=effective_from));
+CREATE TABLE ticket(ticket_id TEXT PRIMARY KEY,requester_id TEXT NOT NULL REFERENCES requester,category_id TEXT NOT NULL REFERENCES category,term_id TEXT NOT NULL REFERENCES term,priority TEXT NOT NULL CHECK(priority IN('urgent','high','normal')),subject TEXT NOT NULL,is_ambiguous INT NOT NULL,escalation_required INT NOT NULL,status TEXT NOT NULL CHECK(status IN('open','in_progress','escalated','resolved','closed')),created_at TEXT NOT NULL,resolved_at TEXT,CHECK(resolved_at IS NULL OR resolved_at>=created_at));
+CREATE TABLE message(message_id TEXT PRIMARY KEY,ticket_id TEXT NOT NULL REFERENCES ticket,seq INT NOT NULL,sender_type TEXT NOT NULL CHECK(sender_type IN('requester','agent','bot')),body TEXT NOT NULL,factual_claim INT NOT NULL,sent_at TEXT NOT NULL,UNIQUE(ticket_id,seq));
+CREATE TABLE message_citation(message_id TEXT NOT NULL REFERENCES message,article_id TEXT NOT NULL REFERENCES knowledge_article,article_version INT NOT NULL,PRIMARY KEY(message_id,article_id));
+CREATE TABLE assignment(assignment_id TEXT PRIMARY KEY,ticket_id TEXT NOT NULL REFERENCES ticket,team_id TEXT NOT NULL,assigned_at TEXT NOT NULL,reason TEXT NOT NULL);
+CREATE TABLE ticket_event(event_id TEXT PRIMARY KEY,ticket_id TEXT NOT NULL REFERENCES ticket,event_type TEXT NOT NULL CHECK(event_type IN('CREATED','ROUTED','ANSWERED','ESCALATED','RESOLVED','CLOSED')),event_at TEXT NOT NULL);
+CREATE TABLE sla(sla_id TEXT PRIMARY KEY,ticket_id TEXT NOT NULL UNIQUE REFERENCES ticket,priority TEXT NOT NULL,target_hours INT NOT NULL,started_at TEXT NOT NULL,due_at TEXT NOT NULL,breached INT NOT NULL);
+CREATE TABLE resolution_feedback(feedback_id TEXT PRIMARY KEY,ticket_id TEXT NOT NULL UNIQUE REFERENCES ticket,rating INT NOT NULL CHECK(rating BETWEEN 1 AND 5),comment TEXT,submitted_at TEXT NOT NULL);
